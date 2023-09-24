@@ -7,12 +7,17 @@
 // Execute `rustlings hint modules2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 mod delicious_snacks {
     // TODO: Fix these use statements
-    use self::fruits::PEAR as ???
-    use self::veggies::CUCUMBER as ???
+    // When we bring a name into scope with the `use` keyword,
+    // the name avaliable in th new scope is private.
+    // To enable the code that calls our code to refer to the name 
+    // as if it had been defined in that code's scope, we can combine `pub` and `use`.
+    // This technique is called re-exporting,
+    // because we’re bringing an item into scope,
+    // but also making that item available for others to bring into their scope.
+    pub use self::fruits::PEAR as fruit;
+    pub use self::veggies::CUCUMBER as veggie;
 
     mod fruits {
         pub const PEAR: &'static str = "Pear";

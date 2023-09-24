@@ -5,8 +5,8 @@
 // Execute `rustlings hint macros3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+// Why not use pub uniformly for access control?
+#[macro_use]
 mod macros {
     macro_rules! my_macro {
         () => {

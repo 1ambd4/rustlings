@@ -3,8 +3,6 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
     // Do not use:
@@ -15,6 +13,20 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+
+    // if num == 0 {
+    //     return 1;
+    // }
+    // (1..=num).reduce(|acc, val| acc * val).unwrap()
+    //
+    // The example of iterators in the trpl:
+    // https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.product
+    // (1..=num).product()
+    //
+    // Notice that (1..=num) not a slice contain all number from 1 to num,
+    // but a array contain a single element, that element is 1..num, a range.
+    // So, can not write as: [1..num].fold(1, |a, b| a * b)
+    (1..=num).fold(1, |a, b| a * b)
 }
 
 #[cfg(test)]
